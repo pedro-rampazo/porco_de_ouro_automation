@@ -1,7 +1,7 @@
 import os
 import requests
 import datetime
-from utils.TimeUtils import TimeUtils
+from porco_de_ouro_automation.utils.TimeUtils import TimeUtils
 from save_result import save_result
     
 def get_match(matches):
