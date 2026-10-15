@@ -2,7 +2,7 @@ import os
 import requests
 import datetime
 from porco_de_ouro_automation.utils.TimeUtils import TimeUtils
-from save_result import save_result
+from porco_de_ouro_automation.save_result import save_result
     
 def get_match(matches):
     today_date = datetime.date.today()
