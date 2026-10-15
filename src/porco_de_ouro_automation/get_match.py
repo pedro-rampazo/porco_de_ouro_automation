@@ -1,6 +1,8 @@
+import os
 import requests
 import datetime
 from utils.TimeUtils import TimeUtils
+from save_result import save_result
     
 def get_match(matches):
     today_date = datetime.date.today()
@@ -39,7 +41,9 @@ def main():
         
     info_match = f"*PRÓXIMO JOGO*:\n{home_team} X {away_team}\n{stadium}\n{match_week_day}, {match_date.day} de {match_month} - {match_hour}\n{match_championship}\nTransmissão: {match_transmission}"    
 
-    print(info_match)
+    return info_match
 
 if __name__ == "__main__":
-    main()
+    match = main()
+    save_result("get_match", match)
+    
