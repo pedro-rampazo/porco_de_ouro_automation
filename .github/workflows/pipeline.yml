@@ -37,4 +37,9 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.VARS_WRITE_TOKEN }}
           GH_REPO: ${{ github.repository }}
-        run: gh variable set GetMatchReturn < "$RUNNER_TEMP/get_match_return.txt"
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo "VARS_WRITE_TOKEN está vazio ou não existe neste repositório"
+            exit 1
+          fi
+          gh variable set GetMatchReturn < "$RUNNER_TEMP/get_match_return.txt"
